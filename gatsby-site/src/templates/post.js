@@ -9,6 +9,7 @@ export default function Template({data}) {
     <Layout>
       <div>
         <h1>{post.frontmatter.title}</h1>
+        <small>{post.frontmatter.date}</small>
         <hr/>
         <div dangerouslySetInnerHTML={{__html: post.html}} />
       </div>
@@ -24,6 +25,7 @@ export const postQuery = graphql`
       frontmatter {
         path
         title
+        date
       }
     }
   }

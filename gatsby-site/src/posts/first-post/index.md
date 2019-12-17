@@ -1,14 +1,16 @@
 ---
 path: '/first-post'
 title: 'Blog Post'
+date: '2019-12-16'
+published: true
 ---
 
 # Hello World!
 
 This blog is written in Markdown
 
-I just added this line of text
-
-| First name | Last name |
+| Name | Occupation |
 | --- | --- |
-| Jason | Casebier |
+| Jason | Software Developer |
+| Anakin | Jedi Knight |
+| Barney | Friendly Dinosaur |
