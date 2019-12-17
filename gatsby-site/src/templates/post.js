@@ -12,6 +12,7 @@ export default function Template({data}) {
         <hr/>
         <div dangerouslySetInnerHTML={{__html: post.html}} />
       </div>
+      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }

@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <h1>Hi people</h1>
@@ -15,7 +15,27 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
+    {data.allMarkdownRemark.edges.map(post => (
+      <div>
+      <Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
+      </div>
+    ))}
   </Layout>
 )
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    allMarkdownRemark(limit: 10) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
